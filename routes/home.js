@@ -8,6 +8,7 @@ homeRouter.get('/', (req, res) => {
       base: 'light',
       addons: ['coconut', 'honey'],
     },
+    bases: Object.bases(COOKIE_BASES),
   });
 });
 
