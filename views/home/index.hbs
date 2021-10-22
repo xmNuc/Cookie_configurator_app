@@ -1,6 +1,7 @@
 <h1>Home page, Configure youre Cookie, index.hbs</h1>
 <h2>{{upper "Select cookie base"}}</h2>
 
+
     {{#each bases}}
    <a href="/configurator/select-base/{{this.[0]}}"> <button>Select {{this.[0]}} for {{this.[1]}} $</button></a>
     {{/each}}
@@ -12,3 +13,4 @@
     {{/each}}
 
 {{>cookie-preview}}
+{{>addons}}
