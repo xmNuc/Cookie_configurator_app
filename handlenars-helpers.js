@@ -1,7 +1,7 @@
 const handlebarsHelpers = {
   upper: (str) => str.toUpperCase(),
 
-  'find-price': (entries, selectedItem) => {
+  findPrice: (entries, selectedItem) => {
     const found = entries.find((el) => el[0] === selectedItem);
 
     if (!found) {
