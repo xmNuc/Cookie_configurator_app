@@ -10,6 +10,7 @@ const handlebarsHelpers = {
     const [, price] = found;
     return price;
   },
+  pricify: (price) => price.toFixed(2),
 };
 
 module.exports = {
