@@ -2,9 +2,7 @@
 <h2>{{upper "Select cookie base"}}</h2>
 
 
-    {{#each bases}}
-   <a href="/configurator/select-base/{{this.[0]}}"> <button>Select {{this.[0]}} for {{this.[1]}} $</button></a>
-    {{/each}}
+    {{> base-selector}}
 
 <h2>Select youre favorite addons</h2>
 
@@ -12,5 +10,12 @@
    <a href="/configurator/add-addon/{{this.[0]}}"> <button>Add {{this.[0]}} for {{this.[1]}} $</button></a>
     {{/each}}
 
+
+{{#if cookie.base}}
 {{>cookie-preview}}
 {{>addons}}
+{{else}}
+<p><strong> Please sellect cookie to see preview</strong></p>
+{{> base-selector}}
+
+{{/if}}

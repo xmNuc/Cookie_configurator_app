@@ -9,7 +9,9 @@ homeRouter.get('/', (req, res) => {
   const { cookieBase } = req.cookies;
 
   const sum =
-    handlebarsHelpers.findPrice(Object.entries(COOKIE_BASES), cookieBase) +
+    (cookieBase
+      ? handlebarsHelpers.findPrice(Object.entries(COOKIE_BASES), cookieBase)
+      : 0) +
     ['coconut', 'honey'].reduce((prev, curr) => {
       return (
         prev + handlebarsHelpers.findPrice(Object.entries(COOKIE_ADDONS), curr)
