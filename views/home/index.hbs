@@ -7,8 +7,9 @@
 <h2>Select youre favorite addons</h2>
 
     {{#each addons}}
-    
+    {{#if (isNotInArray)}}
    <a href="/configurator/add-addon/{{this.[0]}}"> <button>Add {{this.[0]}} for {{this.[1]}} $</button></a>
+   {{/if}}
     {{/each}}
 
 

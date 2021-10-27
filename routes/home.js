@@ -1,14 +1,13 @@
 const express = require('express');
 const { COOKIE_BASES, COOKIE_ADDONS } = require('../data/cookies-data');
-const { handlebarsHelpers } = require('../handlenars-helpers');
-// const handlebarsHelpers = require('../handlenars-helpers');
+const { getAddonsdFromReq } = require('../utils/get-addons-from-req');
+const { handlebarsHelpers } = require('../utils/handlenars-helpers');
 
 const homeRouter = express.Router();
 
 homeRouter.get('/', (req, res) => {
-  const { cookieBase, cookieAddons } = req.cookies;
-
-  const addons = cookieAddons ? JSON.parse(cookieAddons) : [];
+  const { cookieBase } = req.cookies;
+  const addons = getAddonsdFromReq(req);
 
   const sum =
     (cookieBase
