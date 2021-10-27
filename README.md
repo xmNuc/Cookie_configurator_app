@@ -1,3 +1,8 @@
 # Cookie_configurator_app
 
-App made in:
+Programs used in this App:
+Node.js,
+Express,
+express-handlebars,
+cookie-parser,
+
