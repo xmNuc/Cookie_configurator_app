@@ -21,8 +21,20 @@ configuratorRouter
       .render('configurator/added', {
         addonName,
       });
-  });
+  })
+  .get('/delete-addon/:addonName', (req, res) => {
+    const { addonName } = req.params;
 
+    const addons = getAddonsdFromReq(req).filter(
+      (addon) => addon !== addonName
+    );
+
+    res
+      .cookie('cookieAddons', JSON.stringify(addons))
+      .render('configurator/deleted', {
+        addonName,
+      });
+  });
 module.exports = {
   configuratorRouter,
 };

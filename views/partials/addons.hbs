@@ -2,7 +2,14 @@
 <ul>
   <li>Base: {{cookie.base}} - {{pricify (findPrice bases cookie.base)}} $</li>
   {{#each cookie.addons}}
-    <li>Addon: {{this}} - {{pricify (findPrice @root.addons this)}} $</li>
+    <li>Addon:
+      {{this}}
+      -
+      {{pricify (findPrice @root.addons this)}}
+      $
+
+      <a href='/configurator/delete-addon/{{this}}'> <button>Delete</button></a>
+    </li>
   {{/each}}
 </ul>
 <p>
