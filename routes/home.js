@@ -6,13 +6,15 @@ const { handlebarsHelpers } = require('../handlenars-helpers');
 const homeRouter = express.Router();
 
 homeRouter.get('/', (req, res) => {
-  const { cookieBase } = req.cookies;
+  const { cookieBase, cookieAddons } = req.cookies;
+
+  const addons = cookieAddons ? JSON.parse(cookieAddons) : [];
 
   const sum =
     (cookieBase
       ? handlebarsHelpers.findPrice(Object.entries(COOKIE_BASES), cookieBase)
       : 0) +
-    ['coconut', 'honey'].reduce((prev, curr) => {
+    addons.reduce((prev, curr) => {
       return (
         prev + handlebarsHelpers.findPrice(Object.entries(COOKIE_ADDONS), curr)
       );
@@ -21,7 +23,7 @@ homeRouter.get('/', (req, res) => {
   res.render('home/index', {
     cookie: {
       base: cookieBase,
-      addons: ['coconut', 'honey'],
+      addons: addons,
     },
     bases: Object.entries(COOKIE_BASES),
     addons: Object.entries(COOKIE_ADDONS),
