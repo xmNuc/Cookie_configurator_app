@@ -10,3 +10,9 @@ body {
   height: 300px;
   background-size: cover;
 }
+
+.error {
+  border: 1px solid red;
+  padding: 10px;
+  background-color: rgb(173, 132, 132);
+}

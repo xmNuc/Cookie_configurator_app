@@ -1,4 +1,5 @@
 const express = require('express');
+const { COOKIE_ADDONS } = require('../data/cookies-data');
 const { getAddonsdFromReq } = require('../utils/get-addons-from-req');
 
 const configuratorRouter = express.Router();
@@ -12,6 +13,12 @@ configuratorRouter
   })
   .get('/add-addon/:addonName', (req, res) => {
     const { addonName } = req.params;
+
+    if (!COOKIE_ADDONS[addonName]) {
+      return res.render('error', {
+        descryption: `There is no aaddon ${addonName}.`,
+      });
+    }
 
     const addons = getAddonsdFromReq(req);
     addons.push(addonName);
