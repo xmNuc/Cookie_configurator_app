@@ -3,7 +3,7 @@ body {
 }
 
 .logo_img {
-  height: 80px;
+  height: 30px;
 }
 .cookie-preview {
   width: 300px;
@@ -15,4 +15,20 @@ body {
   border: 1px solid red;
   padding: 10px;
   background-color: rgb(173, 132, 132);
+}
+
+button {
+  background: rgb(197, 184, 146);
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.btn-big {
+  font-size: 120%;
+  padding: 10px 10px;
+}
+.btn-big img {
+  width: 20px;
+  height: 20px;
+  vertical-align: text-top;
 }
