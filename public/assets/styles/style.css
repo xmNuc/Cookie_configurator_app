@@ -1,5 +1,6 @@
 body {
   background-color: dimgrey;
+  color: white;
 }
 
 .logo_img {
@@ -11,6 +12,11 @@ body {
   background-size: cover;
 }
 
+.success {
+  border: 1px solid rgb(60, 255, 0);
+  padding: 10px;
+  background-color: rgb(115, 168, 102);
+}
 .error {
   border: 1px solid red;
   padding: 10px;
