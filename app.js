@@ -26,5 +26,5 @@ app.use('/configurator', configuratorRouter);
 app.use('/order', orderRouter);
 
 app.listen(3000, 'localhost', () => {
-  console.log(`Server is started on port 3000`);
+  console.log(`Server is started on http//localhost:3000`);
 });
